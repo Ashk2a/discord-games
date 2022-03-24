@@ -1,21 +1,29 @@
 {
-  "name": "blackjack",
-  "version": "1.0.0",
-  "description": "",
-  "main": "dist/index.js",
-  "scripts": {
-    "start": "node ./dist/index.js",
-    "build": "tsc",
-    "dev": "tsnd --respawn --transpile-only --cls ./src/index.ts"
-  },
-  "dependencies": {
-    "discord.js": "^13.0.0",
-    "sheweny": "^3.0.0"
-  },
-  "devDependencies": {
-    "ts-node-dev": "^1.0.0"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC"
+    "name": "blackjack",
+    "version": "1.0.0",
+    "description": "",
+    "main": "dist/index.js",
+    "scripts": {
+        "start": "node ./dist/index.js",
+        "build": "tsc",
+        "dev": "tsnd --respawn --transpile-only --cls ./src/index.ts"
+    },
+    "dependencies": {
+        "@types/node": "^17.0.23",
+        "discord.js": "^13.0.0",
+        "dotenv": "^16.0.0",
+        "module-alias": "^2.2.2",
+        "sheweny": "^3.0.0",
+        "typescript": "^4.6.2"
+    },
+    "devDependencies": {
+        "ts-node-dev": "^1.0.0"
+    },
+    "_moduleAliases": {
+        "@bot": "src/bot",
+        "@game": "src/game"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC"
 }

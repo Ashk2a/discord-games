@@ -1,28 +1,8 @@
-import { ShewenyClient } from "sheweny";
-import config from "./config";
+import 'dotenv/config'
+import 'module-alias/register';
 
-const client = new ShewenyClient({
-  intents: ["GUILDS", "GUILD_MESSAGES"],
-  managers: {
-    commands: {
-      directory: "./commands",
-      autoRegisterApplicationCommands: true,
-      prefix: "!",
-    },
-    events: {
-      directory: "./events",
-    },
-    buttons: {
-      directory: "./interactions/buttons",
-    },
-    selectMenus: {
-      directory: "./interactions/selectmenus",
-    },
-    inhibitors: {
-      directory: "./inhibitors",
-    },
-  },
-  mode : "development", // Change to production for production bot
-});
+import Client from "@bot/Client";
 
-client.login(config.DISCORD_TOKEN);
+const client = new Client();
+
+client.login();

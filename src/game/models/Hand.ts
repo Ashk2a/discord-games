@@ -1,0 +1,49 @@
+import {Card} from "@game/models";
+
+export class Hand {
+    private _cards: Array<Card> = [];
+
+    constructor() {
+    }
+
+    public get cards(): Array<Card> {
+        return this._cards;
+    }
+
+    public get score(): number {
+        const cardsOnlyAces: Array<Card> = [];
+        const cardsExceptAces: Array<Card> = [];
+
+        // Fill both declared cards collections
+        this.cards.forEach((card: Card) => {
+            card.isAce() ? cardsOnlyAces.push(card) : cardsExceptAces.push(card);
+        });
+
+        // Evaluate score without aces cards
+        const scoreWithoutAces: number = cardsExceptAces.reduce((accumulator: number, cardValue: Card) => {
+            return accumulator + cardValue.value
+        }, 0);
+
+        // Count of aces cards
+        const acesCount = cardsOnlyAces.length;
+
+        // Case there is no aces, just return the previous evaluated score
+        if (acesCount === 0) {
+            return scoreWithoutAces;
+        }
+
+        // Both potential scores under or equal 21
+        const scores: number[] = [
+            acesCount + scoreWithoutAces,
+            acesCount + 10 + scoreWithoutAces
+        ].filter((score: number) => score <= 21)
+
+        // No valid scores found, just return the nearest above 21
+        if (scores.length === 0) {
+            return acesCount + scoreWithoutAces
+        }
+
+        // Max scores between both
+        return Math.max(...scores);
+    }
+}
