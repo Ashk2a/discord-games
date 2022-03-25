@@ -2,7 +2,7 @@ import {Card} from "@game/structures/card";
 import {CardSuit, CardSuits, CardType, CardTypes} from "@game/constants/card";
 
 export class Deck {
-    protected _cards: Array<Card> = [];
+    protected _cards: Card[] = [];
 
     constructor() {
         const numberDecks = 6;

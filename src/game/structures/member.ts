@@ -1,7 +1,7 @@
 import {Game, Hand} from "@game/structures";
 
 export abstract class Member {
-    protected _hands: Array<Hand> = [];
+    protected _hands: Hand[] = [];
 
     protected constructor(protected _game: Game, protected _name: string) {
     }
@@ -14,7 +14,7 @@ export abstract class Member {
         return this._name;
     }
 
-    public get hands(): Array<Hand> {
+    public get hands(): Hand[] {
         return this._hands;
     }
 }

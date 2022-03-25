@@ -4,7 +4,7 @@ import {Manager} from "@game/manager";
 
 export class Game {
     protected _state: GameState = GameState.PENDING;
-    protected _members: Array<Member> = [];
+    protected _members: Member[] = [];
     protected _deck: Deck;
 
     constructor(protected _manager: Manager) {
@@ -20,7 +20,7 @@ export class Game {
         return this._members.find((member: Member) => member instanceof Dealer) as Dealer;
     }
 
-    public get players(): Array<Player> {
-        return this._members.filter((member: Member) => member instanceof Player) as Array<Player>;
+    public get players(): Player[] {
+        return this._members.filter((member: Member) => member instanceof Player) as Player[];
     }
 }

@@ -3,9 +3,9 @@ import EventEmitter from "events";
 import {GameEvent} from "@game/enums/game-event";
 
 export class Manager extends EventEmitter {
-    protected _games: Array<Game> = [];
+    protected _games: Game[] = [];
 
-    public get games(): Array<Game> {
+    public get games(): Game[] {
         return this._games;
     }
 

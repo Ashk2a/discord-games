@@ -1,18 +1,18 @@
 import {Card} from "@game/structures";
 
 export class Hand {
-    protected _cards: Array<Card> = [];
+    protected _cards: Card[] = [];
 
     constructor() {
     }
 
-    public get cards(): Array<Card> {
+    public get cards(): Card[] {
         return this._cards;
     }
 
     public get score(): number {
-        const cardsOnlyAces: Array<Card> = [];
-        const cardsExceptAces: Array<Card> = [];
+        const cardsOnlyAces: Card[] = [];
+        const cardsExceptAces: Card[] = [];
 
         // Fill both declared cards collections
         this._cards.forEach((card: Card) => {
