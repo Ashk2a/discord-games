@@ -23,4 +23,4 @@ export class ButtonTest extends Button {
                 break;
         }
     }
-};
+}

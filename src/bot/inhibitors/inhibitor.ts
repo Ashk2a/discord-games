@@ -17,4 +17,4 @@ export class BlackListInhibitor extends Inhibitor {
     async onFailure(client: ShewenyClient, interaction: CommandInteraction) {
         await interaction.reply("Your guild is blacklisted.");
     }
-};
+}
