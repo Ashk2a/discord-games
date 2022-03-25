@@ -1,7 +1,7 @@
-import {Card} from "@game/models";
+import {Card} from "@game/structures";
 
 export class Hand {
-    private _cards: Array<Card> = [];
+    protected _cards: Array<Card> = [];
 
     constructor() {
     }
@@ -15,7 +15,7 @@ export class Hand {
         const cardsExceptAces: Array<Card> = [];
 
         // Fill both declared cards collections
-        this.cards.forEach((card: Card) => {
+        this._cards.forEach((card: Card) => {
             card.isAce() ? cardsOnlyAces.push(card) : cardsExceptAces.push(card);
         });
 
@@ -45,5 +45,9 @@ export class Hand {
 
         // Max scores between both
         return Math.max(...scores);
+    }
+
+    public isBlackjack(): boolean {
+        return this._cards.length === 2 && this.score === 21;
     }
 }

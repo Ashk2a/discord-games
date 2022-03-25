@@ -1,8 +1,8 @@
-import {Card} from "@game/models/Card";
-import {CardSuit, CardSuits, CardType, CardTypes} from "@game/constants/cards";
+import {Card} from "@game/structures/card";
+import {CardSuit, CardSuits, CardType, CardTypes} from "@game/constants/card";
 
 export class Deck {
-    private _cards: Array<Card> = [];
+    protected _cards: Array<Card> = [];
 
     constructor() {
         const numberDecks = 6;

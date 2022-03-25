@@ -1,9 +1,9 @@
-import {Game, Hand} from "@game/models";
+import {Game, Hand} from "@game/structures";
 
 export abstract class Member {
-    private _hands: Array<Hand> = [];
+    protected _hands: Array<Hand> = [];
 
-    constructor(private _game: Game, private _name: string) {
+    protected constructor(protected _game: Game, protected _name: string) {
     }
 
     public get game(): Game {

@@ -1,5 +1,5 @@
-import {Member} from "@game/models/Member";
-import {Game} from "@game/models/Game";
+import {Member} from "@game/structures/member";
+import {Game} from "@game/structures/game";
 
 export class Dealer extends Member {
     constructor(game: Game) {

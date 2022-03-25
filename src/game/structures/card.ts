@@ -1,7 +1,7 @@
-import {CardSuit, CardType} from "@game/constants/cards";
+import {CardSuit, CardType} from "@game/constants/card";
 
 export class Card {
-    constructor(private _suit: CardSuit, private _type: CardType) {
+    constructor(protected _suit: CardSuit, protected _type: CardType) {
     }
 
     public get suit(): CardSuit {
@@ -24,6 +24,6 @@ export class Card {
 
     public toString(): string
     {
-        return `${this.suit.name}${this.type.name}`
+        return `${this._suit.name}${this._type.name}`
     }
 }

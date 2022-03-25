@@ -1,6 +1,10 @@
 import { ShewenyClient } from "sheweny";
-import IBotConfig from "@bot/IBotConfig";
 import {Intents} from "discord.js";
+
+interface IBotConfig {
+    discord_token: string,
+    environment: string
+}
 
 declare module "sheweny" {
     interface ShewenyClient {
