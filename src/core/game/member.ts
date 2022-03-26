@@ -1,6 +1,6 @@
 import EventEmitter from "events";
 import {GameInstance} from "@core/game/instance";
-import {GameManager} from "@core/game/manager";
+import {GameModule} from "@core/game/module";
 
 export abstract class GameMember extends EventEmitter {
     protected constructor(protected _gameInstance: GameInstance, protected _memberId?: string) {
@@ -11,8 +11,8 @@ export abstract class GameMember extends EventEmitter {
         return this._gameInstance;
     }
 
-    get gameManager(): GameManager {
-        return this._gameInstance.gameManager;
+    get gameManager(): GameModule {
+        return this._gameInstance.gameModule;
     }
 
     get memberId(): string|undefined {

@@ -1,10 +1,9 @@
-import {GameManager} from "@core/game/manager";
+import {GameModule} from "@core/game/module";
 import {GameInstance} from "@core/game/instance";
-import {Game} from "@games/blackjack/structures/game";
+import {Game} from "@modules/blackjack/structures/game";
 
-export class BlackjackManager extends GameManager {
+export class BlackjackModule extends GameModule {
     createGameInstance(threadId: string): GameInstance {
         return new Game(this, threadId);
     }
-
 }

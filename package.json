@@ -21,8 +21,7 @@
     },
     "_moduleAliases": {
         "@core": "src/core",
-        "@shared": "src/shared",
-        "@games": "src/games"
+        "@modules": "src/modules"
     },
     "keywords": [],
     "author": "",

@@ -1,5 +1,5 @@
-import {Game} from "@games/blackjack/structures/game";
-import {Hand} from "@games/blackjack/structures/hand";
+import {Game} from "@modules/blackjack/structures/game";
+import {Hand} from "@modules/blackjack/structures/hand";
 
 export abstract class Member {
     protected _hands: Hand[] = [];

@@ -1,7 +1,7 @@
-import {GameState} from "@games/blackjack/enums/game-state";
+import {GameState} from "@modules/blackjack/enums/game-state";
 import {GameMember} from "@core/game/member";
-import {Hand} from "@games/blackjack/structures/hand";
-import {Game} from "@games/blackjack/structures/game";
+import {Hand} from "@modules/blackjack/structures/hand";
+import {Game} from "@modules/blackjack/structures/game";
 
 export class Player extends GameMember {
     protected _hands: Hand[] = [];

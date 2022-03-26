@@ -9,11 +9,8 @@
             "@core/*": [
                 "src/core/*"
             ],
-            "@shared/*": [
-                "src/shared/*"
-            ],
-            "@games/*": [
-                "src/games/*"
+            "@modules/*": [
+                "src/modules/*"
             ],
         },
         "esModuleInterop": true,

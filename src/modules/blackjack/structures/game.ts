@@ -1,8 +1,8 @@
-import {GameState} from "@games/blackjack/enums/game-state";
-import {Dealer} from "@games/blackjack/structures/dealer";
-import {Deck} from "@games/blackjack/structures/deck";
+import {GameState} from "@modules/blackjack/enums/game-state";
+import {Dealer} from "@modules/blackjack/structures/dealer";
+import {Deck} from "@modules/blackjack/structures/deck";
 import {GameInstance} from "@core/game/instance";
-import {GameManager} from "@core/game/manager";
+import {GameManager} from "@core/game/module";
 
 export class Game extends GameInstance {
     protected _state: GameState = GameState.PENDING;

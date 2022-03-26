@@ -1,4 +1,4 @@
-import {Card} from "@games/blackjack/structures/card";
+import {Card} from "@modules/blackjack/structures/card";
 
 export class Hand {
     protected _cards: Card[] = [];
