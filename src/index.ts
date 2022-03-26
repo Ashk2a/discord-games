@@ -11,7 +11,7 @@ const client = new BotClient({
     mode: process.env.APP_ENV === 'production' ? 'production' : 'development',
 });
 
-client.loadManagers()
+client.loadModules()
 
 client.login(process.env.DISCORD_TOKEN).then(() => {
     console.log('Logged in successfully.')

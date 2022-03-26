@@ -3,17 +3,8 @@ export enum ModulePath {
     GAMES = './games'
 }
 
-export enum AvailableModuleManager {
-    BUTTONS,
-    COMMANDS,
-    EVENTS,
-    INHIBITORS,
-    SELECT_MENUS
-}
-
 export interface ModuleConfig {
+    enabled: boolean,
     id: string,
     path: ModulePath|string
-    enabled: boolean,
-    managers: AvailableModuleManager[]
 }

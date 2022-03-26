@@ -1,24 +1,14 @@
-import {AvailableModuleManager, ModuleConfig, ModulePath} from "@core/module";
+import {ModuleConfig, ModulePath} from "@core/module";
 
 export const Modules: ModuleConfig[] = [
     {
         enabled: true,
         id: "shared",
-        path: ModulePath.ROOT,
-        managers: [
-            AvailableModuleManager.COMMANDS,
-            AvailableModuleManager.EVENTS,
-            AvailableModuleManager.INHIBITORS,
-            AvailableModuleManager.BUTTONS,
-            AvailableModuleManager.SELECT_MENUS
-        ]
+        path: ModulePath.ROOT
     },
     {
         enabled: true,
         id: "blackjack",
-        path: ModulePath.GAMES,
-        managers: [
-            AvailableModuleManager.EVENTS
-        ]
+        path: ModulePath.GAMES
     }
 ]
