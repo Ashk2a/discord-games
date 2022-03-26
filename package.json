@@ -20,8 +20,9 @@
         "ts-node-dev": "^1.0.0"
     },
     "_moduleAliases": {
-        "@bot": "src/bot",
-        "@game": "src/game"
+        "@core": "src/core",
+        "@shared": "src/shared",
+        "@games": "src/games"
     },
     "keywords": [],
     "author": "",

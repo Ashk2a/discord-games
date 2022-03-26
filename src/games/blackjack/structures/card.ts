@@ -1,4 +1,4 @@
-import {CardSuit, CardType} from "@game/constants/card";
+import {CardSuit, CardType} from "@games/blackjack/constants/card";
 
 export class Card {
     constructor(protected _suit: CardSuit, protected _type: CardType) {

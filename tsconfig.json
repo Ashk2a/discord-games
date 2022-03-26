@@ -6,11 +6,14 @@
         ],
         "baseUrl": "./",
         "paths": {
-            "@bot/*": [
-                "src/bot/*"
+            "@core/*": [
+                "src/core/*"
             ],
-            "@game/*": [
-                "src/game/*"
+            "@shared/*": [
+                "src/shared/*"
+            ],
+            "@games/*": [
+                "src/games/*"
             ],
         },
         "esModuleInterop": true,

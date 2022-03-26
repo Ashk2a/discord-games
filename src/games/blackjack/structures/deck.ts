@@ -1,5 +1,5 @@
-import {Card} from "@game/structures/card";
-import {CardSuit, CardSuits, CardType, CardTypes} from "@game/constants/card";
+import {Card} from "@games/blackjack/structures/card";
+import {CardSuit, CardSuits, CardType, CardTypes} from "@games/blackjack/constants/card";
 
 export class Deck {
     protected _cards: Card[] = [];

@@ -1,4 +1,5 @@
-import {Game, Hand} from "@game/structures";
+import {Game} from "@games/blackjack/structures/game";
+import {Hand} from "@games/blackjack/structures/hand";
 
 export abstract class Member {
     protected _hands: Hand[] = [];
@@ -14,7 +15,5 @@ export abstract class Member {
         return this._name;
     }
 
-    public get hands(): Hand[] {
-        return this._hands;
-    }
+
 }
