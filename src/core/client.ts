@@ -21,8 +21,11 @@ export class BotClient extends ShewenyClient {
 
             const moduleFile: any = await import(moduleFilePath);
             const moduleStructure = moduleFile[Object.keys(moduleFile)[0]];
+            const module = new moduleStructure(this, moduleConfig);
 
-            this._modules.push(new moduleStructure(this, moduleConfig));
+            await module.loadManagers();
+
+            this._modules.push(module);
         }
     }
 }

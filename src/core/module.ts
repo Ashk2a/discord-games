@@ -32,8 +32,6 @@ export abstract class Module extends EventEmitter {
         }
 
         new ShewenyInformation(this._client, `${this._config.id} module loaded.`);
-
-        this.loadManagers();
     }
 
     public get client(): BotClient {
@@ -44,12 +42,12 @@ export abstract class Module extends EventEmitter {
         return this._config;
     }
 
-    private async loadManagers(): Promise<void> {
+    public async loadManagers(): Promise<void> {
         await this.loadEventsManager();
         await this.loadCommandsManager();
         await this.loadInhibitorsManager();
         await this.loadButtonsManager();
-        await this.loadSelectMenusManager()
+        await this.loadSelectMenusManager();
     }
 
     private async loadEventsManager(): Promise<void> {
@@ -66,7 +64,7 @@ export abstract class Module extends EventEmitter {
     }
 
     private async loadCommandsManager(): Promise<void> {
-        const path = join(this._config.directory!, 'events');
+        const path = join(this._config.directory!, 'commands');
 
         if (fs.existsSync(join('./src', path))) {
             await new CommandsManager(
