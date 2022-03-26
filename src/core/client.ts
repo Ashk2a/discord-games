@@ -31,10 +31,10 @@ export class BotClient extends ShewenyClient {
             for (const manager of module.managers) {
                 switch (manager) {
                     case AvailableModuleManager.COMMANDS:
-                        await this.loadEvents(module);
+                        await this.loadCommands(module);
                         break;
                     case AvailableModuleManager.EVENTS:
-                        await this.loadCommands(module);
+                        await this.loadEvents(module);
                         break;
                     case AvailableModuleManager.INHIBITORS:
                         await this.loadInhibitors(module);
