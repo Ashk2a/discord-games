@@ -3,8 +3,10 @@ import {GameInstance} from "@core/game/instance";
 import {GameModule} from "@core/game/module";
 
 export abstract class GameMember extends EventEmitter {
-    protected constructor(protected _gameInstance: GameInstance, protected _memberId?: string) {
+    protected constructor(protected _gameInstance: GameInstance, protected _discordUserId?: string) {
         super();
+
+        this.gameInstance.gameMembers.push(this);
     }
 
     get gameInstance(): GameInstance {
@@ -15,11 +17,11 @@ export abstract class GameMember extends EventEmitter {
         return this._gameInstance.gameModule;
     }
 
-    get memberId(): string|undefined {
-        return this._memberId;
+    get discordUserId(): string|undefined {
+        return this._discordUserId;
     }
 
     get isBot(): boolean {
-        return this._memberId === undefined;
+        return this._discordUserId === undefined;
     }
 }

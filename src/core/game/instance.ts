@@ -2,19 +2,33 @@ import EventEmitter from "events";
 import {GameMember} from "@core/game/member";
 import {GameModule} from "@core/game/module";
 
+export enum GameState {
+    INITIALIZED,
+    READY,
+    RUNNING,
+    FINISHED
+}
 
 export abstract class GameInstance extends EventEmitter {
-    protected _gameMembers: Map<string, GameMember> = new Map();
+    protected _gameMembers: GameMember[] = [];
 
     protected constructor(protected _gameModule: GameModule, protected _threadId: string) {
         super();
+
+        this.gameModule.gameInstances.push(this);
     }
 
-    public get gameModule(): GameModule {
+    abstract addMember(discordUserId: string): GameMember;
+
+    get gameMembers(): GameMember[] {
+        return this._gameMembers;
+    }
+
+    get gameModule(): GameModule {
         return this._gameModule;
     }
 
-    public get threadId(): string {
+    get threadId(): string {
         return this._threadId;
     }
 }

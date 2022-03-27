@@ -6,7 +6,7 @@ export const ModuleConfigs = [
     {
         enabled: true,
         id: "blackjack",
-        channelId: "123456789",
+        channelId: "957030800094806086",
         description: "Blackjack game",
     }
 ]

@@ -8,13 +8,17 @@ export interface GameModuleConfig extends ModuleConfig {
 }
 
 export abstract class GameModule extends Module {
-    protected _gameInstances: Map<string, GameInstance> = new Map();
+    protected _gameInstances: GameInstance[] = [];
 
     protected constructor(protected _client: BotClient, protected _config: GameModuleConfig) {
         super(_client, _config);
     }
 
     abstract createGameInstance(threadId: string): GameInstance;
+
+    get gameInstances(): GameInstance[] {
+        return this._gameInstances;
+    }
 
     get channelId(): string {
         return this._config.channelId;

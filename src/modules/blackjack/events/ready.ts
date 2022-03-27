@@ -1,8 +1,8 @@
-import type {ShewenyClient} from "sheweny";
 import {Event} from "sheweny";
+import {BotClient} from "@core/client";
 
 export class ReadyEvent extends Event {
-    constructor(client: ShewenyClient) {
+    constructor(public client: BotClient) {
         super(client, "ready", {
             description: "Client is logged in",
             once: true,

@@ -2,14 +2,7 @@ import EventEmitter from "events";
 import {BotClient} from "@core/client";
 import {join} from "path";
 import fs from "fs";
-import {
-    ButtonsManager,
-    CommandsManager,
-    EventsManager,
-    InhibitorsManager,
-    SelectMenusManager,
-    ShewenyInformation
-} from "sheweny";
+import {ButtonsManager, CommandsManager, EventsManager, InhibitorsManager, SelectMenusManager} from "sheweny";
 
 export interface ModuleConfig {
     enabled: boolean,
@@ -24,14 +17,6 @@ export abstract class Module extends EventEmitter {
         if (!this._config.directory) {
             this._config.directory = join('modules', this._config.id);
         }
-
-        // Module is disabled, don't load managers
-        if (!this._config.enabled) {
-            new ShewenyInformation(this._client, `${this._config.id} module not enabled. Skipped.`);
-            return;
-        }
-
-        new ShewenyInformation(this._client, `${this._config.id} module loaded.`);
     }
 
     public get client(): BotClient {
@@ -71,8 +56,15 @@ export abstract class Module extends EventEmitter {
                 this._client,
                 {
                     directory: path,
+                    guildId: process.env.GUILD_ID,
+                    autoRegisterApplicationCommands: true,
+                    loadAll: true,
+                    prefix: "!",
+                    default: {
+                        cooldown: 10
+                    }
                 }
-            ).loadAndRegisterAll();
+            );
         }
     }
 
@@ -83,9 +75,10 @@ export abstract class Module extends EventEmitter {
             await new InhibitorsManager(
                 this._client,
                 {
-                    directory: path
+                    directory: path,
+                    loadAll: true
                 }
-            ).loadAll();
+            );
         }
     }
 
@@ -96,9 +89,10 @@ export abstract class Module extends EventEmitter {
             await new ButtonsManager(
                 this._client,
                 {
-                    directory: path
+                    directory: path,
+                    loadAll: true
                 }
-            ).loadAll();
+            );
         }
     }
 
@@ -109,9 +103,10 @@ export abstract class Module extends EventEmitter {
             await new SelectMenusManager(
                 this._client,
                 {
-                    directory: path
+                    directory: path,
+                    loadAll: true
                 }
-            ).loadAll();
+            );
         }
     }
 }

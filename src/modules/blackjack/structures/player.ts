@@ -8,8 +8,8 @@ export class Player extends GameMember {
     protected _moneyBet: number = 0;
     protected _money: number = 100;
 
-    constructor(protected _gameInstance: Game, protected _memberId?: string) {
-        super(_gameInstance, _memberId);
+    constructor(protected _gameInstance: Game, protected _discordUserId?: string) {
+        super(_gameInstance, _discordUserId);
     }
 
     public get hands(): Hand[] {
